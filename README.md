@@ -1,27 +1,24 @@
 # Gdzieobstawic
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+Angular project for helping sport betters to get the best rate for coupon with multiple football events.
+It is part of gdzieobstawic.pl project, so API from [gdzieobstawic.pl_scrapers](https://github.com/gordon502/gdzieobstawic.pl_scrapers) project is required for proper working. Now it is using data from polish bookmakers scraped from (flashscore.pl)[https://www.flashscore.pl] site.
 
-## Development server
+## Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js (version 14 would suit the best)
+- API Server from [gdzieobstawic.pl_scrapers](https://github.com/gordon502/gdzieobstawic.pl_scrapers) project
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install
+npm run start
+```
 
-## Build
+## Configuring connection to API
+In `src/environments/environment.ts` change `API_URL` to value that is pointing to you API Server.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Screenshots
+![Screenshot #1](/screenshots/1.png)
+![Screenshot #2](/screenshots/2.png)
+![Screenshot #3](/screenshots/3.png)
