@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FlashscoreService } from 'src/app/services/match-provider/implementation/flashscore/flashscore.service';
 
 @Component({
   selector: 'app-start',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private flashscoreService: FlashscoreService
+  ) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    console.log(await this.flashscoreService.findForToday())
   }
 
 }
