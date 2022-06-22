@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Match } from 'src/app/models/match';
+import { Offer } from 'src/app/models/offer';
 import { SelectedMatch } from 'src/app/models/selected-match';
 import { FlashscoreService } from 'src/app/services/match-provider/implementation/flashscore/flashscore.service';
+import { OfferCalculatorService } from 'src/app/services/offers-calculator/offer-calculator.service';
 
 @Component({
   selector: 'app-start',
@@ -15,8 +17,13 @@ export class StartComponent implements OnInit {
 
   comboRate: number = 1.0;
 
+  offers: Offer[] = [];
+
+  modalActive: boolean = false;
+
   constructor(
-    private flashscoreService: FlashscoreService
+    private flashscoreService: FlashscoreService,
+    private offerCalculatorService: OfferCalculatorService
   ) { }
 
   async ngOnInit() {
@@ -35,6 +42,16 @@ export class StartComponent implements OnInit {
     this.removeMatch(selectedMatch);
 
     this.recalculateComboRate();
+  }
+  
+  handleCalculateOffers() {
+    this.offers = this.offerCalculatorService.prepareOffersFromSelectedMatches(this.selectedMatches);
+
+    this.modalActive = true;
+  }
+
+  handleCloseModal() {
+    this.modalActive = false;
   }
 
   private removeMatch(selectedMatch: SelectedMatch) {

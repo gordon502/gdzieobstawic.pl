@@ -1,0 +1,20 @@
+<div class="modal fade" [class.show]="isActive" [class.d-block]="isActive">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="offer-modal-label">Przeliczone oferty</h5>
+            </div>
+            <div class="modal-body">
+                <p *ngFor="let offer of offers">
+                    {{ offer.bookmaker }} : <span class="fw-bold">{{ offer.stake.toFixed(2) }}</span>
+                </p>
+                <p *ngIf="offers.length === 0">
+                    Niestety żaden bukmacher nie miał w ofercie wszystkich wybranych meczów
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="closeModal()">Zamknij</button>
+            </div>
+        </div>
+    </div>
+</div>

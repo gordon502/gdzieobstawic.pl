@@ -7,7 +7,15 @@
         </div>
         <div class="col-12 col-xxl-5">
             <h2><span class="badge bg-success rounded-pill">Kuponik</span></h2>
-            <app-coupon [selectedMatches]="selectedMatches" [comboRate]="comboRate" (removeMatchEvent)="handleRemoveMatch($event)"></app-coupon>
+            <app-coupon 
+                [selectedMatches]="selectedMatches" 
+                [comboRate]="comboRate" 
+                (removeMatchEvent)="handleRemoveMatch($event)" 
+                (calculateOfferEvent)="handleCalculateOffers()"
+            >
+            </app-coupon>
         </div>
     </div>
 </div>
+
+<app-offer-modal [offers]="offers" [isActive]="modalActive" (closeModalEvent)="handleCloseModal()"></app-offer-modal>

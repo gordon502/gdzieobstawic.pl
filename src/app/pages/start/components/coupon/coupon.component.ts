@@ -13,6 +13,8 @@ export class CouponComponent implements OnInit {
 
   @Output() removeMatchEvent: EventEmitter<SelectedMatch> = new EventEmitter<SelectedMatch>();
 
+  @Output() calculateOfferEvent: EventEmitter<void> = new EventEmitter<void>();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -20,5 +22,9 @@ export class CouponComponent implements OnInit {
 
   removeMatch(selected: SelectedMatch) {
     this.removeMatchEvent.emit(selected);
+  }
+
+  calculateOffers() {
+    this.calculateOfferEvent.emit();
   }
 }

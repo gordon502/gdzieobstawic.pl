@@ -4,6 +4,8 @@ import { StartComponent } from './start.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatchesTableComponent } from './components/matches-table/matches-table.component';
 import { CouponComponent } from './components/coupon/coupon.component';
+import { OfferModalComponent } from './components/offer-modal/offer-modal.component';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 
 const routes: Routes = [
   {
@@ -16,11 +18,13 @@ const routes: Routes = [
   declarations: [
     StartComponent,
     MatchesTableComponent,
-    CouponComponent
+    CouponComponent,
+    OfferModalComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MdbModalModule
   ],
   bootstrap: [StartComponent]
 })
