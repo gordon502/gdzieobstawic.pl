@@ -1,5 +1,12 @@
 <div class="container">
-    <div class="row justify-content-center">
-        test
+    <h1 class="text-center mt-5">Gdzie obstawić</h1>
+    <div class="row justify-content-between">
+        <div class="col-8">
+            <h2><span class="badge bg-primary rounded-pill">Spotkania (średnie kursy)</span></h2>
+            <app-matches-table [matches]="matches"></app-matches-table>
+        </div>
+        <div class="col-3">
+            <h2><span class="badge bg-success rounded-pill">Kuponik</span></h2>
+        </div>
     </div>
 </div>

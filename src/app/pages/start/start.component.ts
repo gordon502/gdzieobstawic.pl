@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Match } from 'src/app/models/match';
 import { FlashscoreService } from 'src/app/services/match-provider/implementation/flashscore/flashscore.service';
 
 @Component({
@@ -7,13 +8,14 @@ import { FlashscoreService } from 'src/app/services/match-provider/implementatio
   styleUrls: ['./start.component.scss']
 })
 export class StartComponent implements OnInit {
+  matches: Match[] = [];
 
   constructor(
     private flashscoreService: FlashscoreService
   ) { }
 
   async ngOnInit() {
-    console.log(await this.flashscoreService.findForToday())
+    this.matches = await this.flashscoreService.findForToday();
   }
 
 }

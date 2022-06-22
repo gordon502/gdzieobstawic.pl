@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StartComponent } from './start.component';
 import { RouterModule, Routes } from '@angular/router';
+import { MatchesTableComponent } from './components/matches-table/matches-table.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    StartComponent
+    StartComponent,
+    MatchesTableComponent
   ],
   imports: [
     CommonModule,
