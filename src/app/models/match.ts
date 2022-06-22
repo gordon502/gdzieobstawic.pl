@@ -5,9 +5,9 @@ export class Match {
         public homeTeam: string,
         public awayTeam: string,
         public date: string,
-        public meanHome: Number,
-        public meanDraw: Number,
-        public meanAway: Number,
+        public meanHome: number,
+        public meanDraw: number,
+        public meanAway: number,
         public stakes: Stake[]
     ) { }
 }

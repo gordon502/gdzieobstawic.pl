@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Match } from 'src/app/models/match';
+import { SelectedMatch } from 'src/app/models/selected-match';
 
 @Component({
   selector: 'app-matches-table',
@@ -9,10 +10,26 @@ import { Match } from 'src/app/models/match';
 export class MatchesTableComponent implements OnInit {
   @Input() matches!: Match[];
 
+  @Output() matchSelectedEvent = new EventEmitter<SelectedMatch>();
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.matches[0]);
   }
 
+  selectMatch(match: Match, bet: string) {
+    if ([SelectedMatch.HOME_BET, SelectedMatch.DRAW_BET, SelectedMatch.AWAY_BET].includes(bet) === false) {
+      return;
+    }
+
+    const meanRate = bet === SelectedMatch.HOME_BET
+      ? match.meanHome
+      : (
+        bet === SelectedMatch.DRAW_BET
+          ? match.meanDraw
+          : match.meanAway
+      );
+
+    this.matchSelectedEvent.emit(new SelectedMatch(bet, meanRate, match));
+  }
 }

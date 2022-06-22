@@ -1,0 +1,37 @@
+<div class="card text-center">
+    <div class="card-header bg-success text-white">Wybrane zakłady</div>
+    <div class="card-body">
+      <table *ngIf="selectedMatches.length > 0" class="table table-hover">
+          <thead>
+            <tr>
+                <th>Gosp.</th>
+                <th>Gość</th>
+                <th>Zakład</th>
+                <th>Kurs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let selected of selectedMatches">
+                <td>{{ selected.match.homeTeam }}</td>
+                <td>{{ selected.match.awayTeam }}</td>
+                <td class="text-center"><span class="fw-bold">{{ selected.bet === 'home' ? '1' : (selected.bet === 'draw' ? 'X' : '2') }}</span></td>
+                <td>
+                    <button type="button" class="btn btn-link btn-sm p-1" (click)="removeMatch(selected)">
+                        {{ selected.meanRate }}
+                    </button>
+                </td>
+            </tr>
+            <tr class="ako">
+                <td></td>
+                <td></td>
+                <td class="fw-bold">AKO</td>
+                <td class="fw-bold">{{ comboRate.toFixed(2) }}</td>
+            </tr>
+          </tbody>
+      </table>
+      <p *ngIf="selectedMatches.length === 0">Żaden zakład nie został wybrany</p>
+    </div>
+    <div class="card-footer text-muted">
+        <a href="#" class="btn btn-primary">Przelicz</a>
+    </div>
+</div>

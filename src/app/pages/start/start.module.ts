@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { StartComponent } from './start.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatchesTableComponent } from './components/matches-table/matches-table.component';
+import { CouponComponent } from './components/coupon/coupon.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     StartComponent,
-    MatchesTableComponent
+    MatchesTableComponent,
+    CouponComponent
   ],
   imports: [
     CommonModule,

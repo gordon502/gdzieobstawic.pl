@@ -7,9 +7,9 @@
         <th>Godzina</th>
         <th>Gospodarze</th>
         <th>Goście</th>
-        <th>1</th>
-        <th>X</th>
-        <th>2</th>
+        <th class="text-center">1</th>
+        <th class="text-center">X</th>
+        <th class="text-center">2</th>
       </tr>
     </thead>
     <tbody>
@@ -17,9 +17,21 @@
             <td>{{ match.date.substr(11, 2) }}:{{ match.date.substr(14, 2) }}</td>
             <td>{{ match.homeTeam }}</td>
             <td>{{ match.awayTeam }}</td>
-            <td>{{ match.meanHome }}</td>
-            <td>{{ match.meanDraw }}</td>
-            <td>{{ match.meanAway }}</td>
+            <td class="text-center">
+                <button class="btn btn-primary" (click)="selectMatch(match, 'home')">
+                    {{ match.meanHome.toFixed(2) }}
+                </button>
+            </td>
+            <td class="text-center">
+                <button class="btn btn-primary" (click)="selectMatch(match, 'draw')">
+                    {{ match.meanDraw.toFixed(2) }}
+                </button>
+            </td>
+            <td class="text-center">
+                <button class="btn btn-primary" (click)="selectMatch(match, 'away')">
+                    {{ match.meanAway.toFixed(2) }}
+                </button>
+            </td>
         </tr>
     </tbody>
   </table>
