@@ -1,7 +1,7 @@
 # Gdzieobstawic
 
 Angular project for helping sport betters to get the best rate for coupon with multiple football events.
-It is part of gdzieobstawic.pl project, so API from [gdzieobstawic.pl_scrapers](https://github.com/gordon502/gdzieobstawic.pl_scrapers) project is required for proper working. Now it is using data from polish bookmakers scraped from (flashscore.pl)[https://www.flashscore.pl] site.
+It is part of gdzieobstawic.pl project, so API from [gdzieobstawic.pl_scrapers](https://github.com/gordon502/gdzieobstawic.pl_scrapers) project is required for proper working. Now it is using data from polish bookmakers scraped from [flashscore.pl](https://www.flashscore.pl) site.
 
 ## Requirements
 
