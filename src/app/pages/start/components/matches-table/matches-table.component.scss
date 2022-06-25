@@ -1,0 +1,22 @@
+.dataTables_filter, .dataTables_paginate {
+    float: right;
+}
+
+.dataTables_filter {
+    input[type="search"] {
+        display: inline;
+        max-width: 144px;
+        margin-left: 5px;
+    }
+}
+
+.dataTables_wrapper {
+    margin-bottom: 30px;
+}
+
+.dataTables_length {
+    select {
+        display: inline;
+        max-width: 66px;
+    }
+}

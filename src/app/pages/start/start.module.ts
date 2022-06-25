@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatchesTableComponent } from './components/matches-table/matches-table.component';
 import { CouponComponent } from './components/coupon/coupon.component';
 import { OfferModalComponent } from './components/offer-modal/offer-modal.component';
-import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { DataTablesModule } from 'angular-datatables';
 
 const routes: Routes = [
   {
@@ -24,7 +24,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MdbModalModule
+    DataTablesModule
   ],
   bootstrap: [StartComponent]
 })
