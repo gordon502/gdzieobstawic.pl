@@ -7,6 +7,10 @@
         position: fixed;
         width: 37vw;
     }
+
+    @media (max-width: 1399px) {
+        margin-bottom: 50px;
+    }
 }
 
 .ako {
