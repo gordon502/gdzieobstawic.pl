@@ -1,22 +1,32 @@
-.dataTables_filter, .dataTables_paginate {
-    float: right;
-}
+.dataTables {
+    &_filter {
+        float: right;
 
-.dataTables_filter {
-    input[type="search"] {
-        display: inline;
-        max-width: 144px;
-        margin-left: 5px;
+        input[type="search"] {
+            display: inline;
+            max-width: 144px;
+            margin-left: 5px;
+        }
+    }
+
+    &_wrapper {
+        margin-bottom: 30px;
+    }
+
+    &_length {
+        select {
+            display: inline;
+            max-width: 66px;
+        }
+    }
+
+    &_paginate {
+        float: right;
     }
 }
 
-.dataTables_wrapper {
-    margin-bottom: 30px;
-}
-
-.dataTables_length {
-    select {
-        display: inline;
-        max-width: 66px;
+.dataTable {
+    th.sorting {
+        cursor: pointer
     }
 }
